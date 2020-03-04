@@ -1,16 +1,13 @@
 FROM node:12-alpine
 
-ARG JSONLINT_VERSION="latest"
 ENV npm_config_loglevel=silent
 
 LABEL name="docker-jsonlint"
 LABEL maintainer="Peter Dave Hello <hsu@peterdavehello.org>"
 
-LABEL version="$JSONLINT_VERSION"
-
 WORKDIR /json
 
-RUN npm install -g @prantlf/jsonlint@"$JSONLINT_VERSION" && \
+RUN npm install -g @prantlf/jsonlint && \
 	rm -rf ~/.npm && \
 	jsonlint --help
 
