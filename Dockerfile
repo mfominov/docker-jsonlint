@@ -1,6 +1,6 @@
 FROM node:12-alpine
 
-ARG JSONLINT_VERSION=""
+ARG JSONLINT_VERSION="latest"
 ENV npm_config_loglevel=silent
 
 LABEL name="docker-jsonlint"
